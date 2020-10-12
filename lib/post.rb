@@ -1,20 +1,28 @@
-require 'pry'
+ require 'pry'
 
-# @@all = []
+class Post
 
-# class Post
+  @@all = []
 
-#   attr_accessor :title, :author, :author_name
+  attr_accessor :title, :author, :author_name
 
-#   def initialize(title)
-#     @title = title
-#     @author
-#     @author_name
-#     @@all << self
-#   end
+  def initialize(title)
+    @title = title
+    @author
+    @author_name
+    @@all << self
+  end
 
-#   def self.all
-#     @@all
-#   end
+  def author_name
+    if !@author
+      nil
+    else
+      @author.name
+    end
+  end
 
-# end
+  def self.all
+    @@all
+  end
+
+end
