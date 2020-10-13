@@ -2,10 +2,15 @@
 
 class Post
 
+  # CLASS VARIABLES
   @@all = []
 
-  attr_accessor :title, :author, :author_name
+  # CLASS METHODS
+  def self.all
+    @@all
+  end
 
+  # INIT
   def initialize(title)
     @title = title
     @author
@@ -13,6 +18,10 @@ class Post
     @@all << self
   end
 
+  # INSTANCE WRITER/READER MACROS
+  attr_accessor :title, :author, :author_name
+
+  # INSTANCE METHODS
   def author_name
     if !@author
       nil
@@ -20,9 +29,5 @@ class Post
       @author.name
     end
   end
-
-  def self.all
-    @@all
-  end
-
+  
 end
