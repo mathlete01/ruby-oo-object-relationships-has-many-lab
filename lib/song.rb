@@ -15,18 +15,13 @@ class Song
   # INIT
   def initialize(name)
     @name = name
-    @artist  #An individual song will need to have a reference to the artist it belongs to. 
     @@all << self
   end
 
   # INSTANCE WRITER/READER MACROS
-  attr_accessor :name, :artist
+    # In order to have an artist find all of it's songs...a song instance needs to know about the artist class it belongs to.
 
-  # INSTANCE READER METHODS
-  # In order to have an artist find all of it's songs...a song instance needs to know about the artist class it belongs to.
-  def artist
-    @artist
-  end
+  attr_accessor :name, :artist
 
   # INSTANCE METHODS
   # Build the methods some_song.artist_name that return the names of the artist. This method should use, or extend, the has many/belongs to relationship you're building out. If a song has an artist, you can call: some_song.artist and return an actual instance of the Artist class. Since every artist has a name, some_song.artist.name should return the name of the Artist instance associated with the given song. Your #artist_name method should utilize this relationship.

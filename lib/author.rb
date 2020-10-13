@@ -14,7 +14,7 @@ class Author
   end
 
   # INSTANCE WRITER/READER MACROS
-  attr_accessor :name
+  attr_reader :name
 
   # INSTANCE METHOD: GETTER
   def posts
@@ -24,13 +24,11 @@ class Author
   # INSTANCE METHODS
   def add_post(post)
     post.author = self
-    @posts << post
   end
   
   def add_post_by_title(title)
     title = Post.new(title)
     title.author = self
-    @posts << title
   end
 
 end

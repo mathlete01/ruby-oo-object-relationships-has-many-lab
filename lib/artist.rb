@@ -15,7 +15,7 @@ class Artist
   end
 
   # INSTANCE WRITER/READER MACROS
-  attr_accessor :name
+  attr_reader :name
 
   #INSTANCE METHOD: GETTER
   # an individual artist will need a method that returns a collection of all the songs that belong to that artist. 
@@ -26,14 +26,12 @@ class Artist
   #INSTANCE METHODS
   def add_song(song)
     song.artist = self
-    @songs << song
   end
 
   # The #add_song_by_name method should take in an argument of a name (or title), use that argument to create a new song (or post) and then associate the objects.
   def add_song_by_name(title)
     title = Song.new(title)
     title.artist = self
-    @songs << title
   end
 
 end

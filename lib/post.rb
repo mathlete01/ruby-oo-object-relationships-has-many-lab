@@ -13,13 +13,11 @@ class Post
   # INIT
   def initialize(title)
     @title = title
-    @author
-    @author_name
     @@all << self
   end
 
   # INSTANCE WRITER/READER MACROS
-  attr_accessor :title, :author, :author_name
+  attr_accessor :title, :author
 
   # INSTANCE METHODS
   def author_name
@@ -29,5 +27,5 @@ class Post
       @author.name
     end
   end
-  
+
 end
