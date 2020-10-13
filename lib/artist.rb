@@ -2,14 +2,8 @@ require 'pry'
 
 class Artist
   
-  # CLASS VARIABLES
-  @@all = []
-
   # CLASS METHODS: GETTER
-  def self.all
-    @@all
-  end
-
+  # You'll be required to write a class method that returns the total number of songs that have been created. How can we get access to total number of songs from the artist class?
   def self.song_count
     Song.all.length
   end
@@ -18,22 +12,24 @@ class Artist
   def initialize(name)
     @name = name
     @songs = []
-    @@all << self
   end
 
   # INSTANCE WRITER/READER MACROS
-  attr_accessor :name, :artist
+  attr_accessor :name
 
-  #INSTANCE METHODS
+  #INSTANCE METHOD: GETTER
+  # an individual artist will need a method that returns a collection of all the songs that belong to that artist. 
   def songs
     Song.all
   end
 
+  #INSTANCE METHODS
   def add_song(song)
     song.artist = self
     @songs << song
   end
 
+  # The #add_song_by_name method should take in an argument of a name (or title), use that argument to create a new song (or post) and then associate the objects.
   def add_song_by_name(title)
     title = Song.new(title)
     title.artist = self
